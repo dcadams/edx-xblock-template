@@ -1,0 +1,4 @@
+*_xblock.egg-info/
+node_modules/
+*.pyc
+*.sw[op]
