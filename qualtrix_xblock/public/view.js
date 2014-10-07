@@ -1,4 +1,4 @@
-function TemplateXblockView(runtime, element) {
+function QualtrixXblockView(runtime, element) {
     'use strict';
 
     var $ = window.jQuery;

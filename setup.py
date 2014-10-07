@@ -33,21 +33,21 @@ def get_package_data(package, roots):
 
 
 setup(
-    name='templatexblock-xblock',
+    name='qualtrix_xblock-xblock',
     version='0.1',
-    description='templatexblock XBlock',
+    description='qualtrix_xblock XBlock',
     packages=[
-        'templatexblock',
+        'qualtrix_xblock',
     ],
     install_requires=[
         'XBlock',
     ],
     entry_points={
         'xblock.v1': [
-            'templatexblock = templatexblock:TemplateXblock',
+            'qualtrix_xblock = qualtrix_xblock:QualtrixXblock',
         ],
     },
-    package_data=get_package_data("templatexblock", [
+    package_data=get_package_data("qualtrix_xblock", [
         "private",
         "public",
     ]),

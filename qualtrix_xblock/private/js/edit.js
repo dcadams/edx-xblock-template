@@ -1,4 +1,4 @@
-function TemplateXblockEdit(runtime, element) {
+function QualtrixXblockEdit(runtime, element) {
     'use strict';
 
     var $ = window.$;
@@ -20,8 +20,8 @@ function TemplateXblockEdit(runtime, element) {
         $.ajax(url, {
             type: 'POST',
             data: JSON.stringify({
-                'xblock_templatexblock_name':
-                    $('#xblock_templatexblock_name').val()
+                'xblock_qualtrix_xblock_name':
+                    $('#xblock_qualtrix_xblock_name').val()
             }),
             success: function buttonSaveOnSuccess() {
                 runtime.notify('save', {

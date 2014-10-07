@@ -8,9 +8,9 @@ from xblock.fields import String
 from xblock.fragment import Fragment
 
 
-class TemplateXblock(XBlock):
+class QualtrixXblock(XBlock):
     name = String(
-        default="TemplateXblock",
+        default="QualtrixXblock",
         scope=Scope.settings,
         help='TODO',
     )
@@ -33,7 +33,7 @@ class TemplateXblock(XBlock):
         ))
         frag.add_css_url(self.resource_url("public/view.less.min.css"))
         frag.add_javascript_url(self.resource_url("public/view.js.min.js"))
-        frag.initialize_js('TemplateXblockView')
+        frag.initialize_js('QualtrixXblockView')
         return frag
 
     def studio_view(self, context=None):
@@ -42,24 +42,24 @@ class TemplateXblock(XBlock):
             name=self.name,
         ))
         frag.add_javascript_url(self.resource_url("public/edit.js.min.js"))
-        frag.initialize_js('TemplateXblockEdit')
+        frag.initialize_js('QualtrixXblockEdit')
         return frag
 
     @XBlock.json_handler
     def studio_view_post(self, data, suffix=''):
-        self.name = data['xblock_templatexblock_name']
+        self.name = data['xblock_qualtrix_xblock_name']
         return {
-            'xblock_templatexblock_name': self.name,
+            'xblock_qualtrix_xblock_name': self.name,
         }
 
     @staticmethod
     def workbench_scenarios():
         """A canned scenario for display in the workbench."""
         return [
-            ("TemplateXblock",
+            ("QualtrixXblock",
              """<vertical_demo>
-                    <templatexblock />
-                    <templatexblock name="My First XBlock" />
+                    <qualtrix_xblock />
+                    <qualtrix_xblock name="My First XBlock" />
                 </vertical_demo>
              """),
         ]
