@@ -21,7 +21,13 @@ function QualtrixXblockEdit(runtime, element) {
             type: 'POST',
             data: JSON.stringify({
                 'xblock_qualtrix_xblock_name':
-                    $('#xblock_qualtrix_xblock_name').val()
+                    $('#xblock_qualtrix_xblock_name').val(),
+                'xblock_qualtrix_xblock_survey_id':
+                	$('#xblock_qualtrix_xblock_survey_id').val(),
+                'xblock_qualtrix_xblock_your_university':
+                	$('#xblock_qualtrix_xblock_your_university').val(),
+                'xblock_qualtrix_xblock_link_text':
+                	$('#xblock_qualtrix_xblock_link_text').val()
             }),
             success: function buttonSaveOnSuccess() {
                 runtime.notify('save', {
@@ -34,4 +40,10 @@ function QualtrixXblockEdit(runtime, element) {
         });
         return false;
     });
+    
+    $('#display-source').click(function(e) {
+    	e.preventDefault();
+    	$('#content-source').toggle();
+    });
+    
 }
